@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>index.knit</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="index_files/header-attrs-2.14/header-attrs.js"></script>
+    <link href="index_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="index_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title"><h1 class="first">
+Programming Historian<br><span style="font-size:50%;text-transform:lowercase"> un lieu de collaborations et d’interactions multiples<span>
+</h1></h1>
+    <h2 class="author"><p class="name">
+Matthias Gille Levenson (ENS Lyon), Sofia Papastamkou (CNRS/C2DH, Université du Luxembourg) &amp; Célian Ringwald (Inria - Equipe Wimmics)
+</p></h2>
+    <h3 class="date"><img src="images/about2.png" style="margin-top:20px;margin-bottom:0px;" width="250"/><br><img src="images/ph-fr.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-en.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-es.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-pt.svg" width="70" style="float:center;margin-top:30px;"/>
+<h2 class="place2">
+<i>#DHNord 2022</i>
+</h2></h3>
+</section>
+
+<section>
+<section id="le-programming-historian" class="title-slide slide level1" data-background-size="1000px" data-background-color="white">
+<h1 data-background-size="1000px" data-background-color="white">Le programming historian</h1>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+Revue méthodes en ligne <br> <a href="https://programminghistorian.org/" class="uri">https://programminghistorian.org/</a>
+</p>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+“Tutoriels évalués par des pairs qui permettent l’initiation à et l’apprentissage d’un large éventail d’outils numériques, de techniques et de flux de travail pour faciliter la recherche et l’enseignement en SHS”
+</p>
+</section>
+<section id="identité" class="slide level2">
+<h2>Identité</h2>
+<p><img src="images/about.png" style="margin-top:20px;margin-bottom:0px;" width="200"/><br></p>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+<ul>
+<li>
+4 versions langagières à l’heure actuelle: EN, ES, FR, PT
+</li>
+<li>
+Libre accès (modèle économique: diamond open access)
+</li>
+<li>
+Licences libres CC-BY 4.0
+</li>
+<li>
+Evaluation ouverte par les pairs
+</li>
+<li>
+Logiciels et technologies libres
+</li>
+<li>
+Données ouvertes
+</li>
+</ul>
+</p>
+</section>
+<section id="leçons" class="slide level2">
+<h2>Leçons</h2>
+<h3 id="versions-langagières">4 versions langagières</h3>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+188 leçons publiées -&gt; 102 originales (toutes langues confondues)
+</p>
+<p><img src="images/ph-en.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-es.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-fr.svg" width="70" style="float:center;margin-top:30px;"/><img src="images/ph-pt.svg" width="70" style="float:center;margin-top:30px;"/></p>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+<ul>
+<li>
+EN : 89 leçons depuis 2012 (toutes originales)
+</li>
+<li>
+ES : 55 leçons depuis 2017 (traductions + 11 originales)
+</li>
+<li>
+FR : 21 leçons depuis 2019 (traductions + 2 originales)
+</li>
+<li>
+PT : 23 leçons depuis 2021 (traductions)
+</li>
+</ul>
+</p>
+</section>
+<section id="leçons-1" class="slide level2">
+<h2>Leçons</h2>
+<h3 id="organisation">Organisation</h3>
+<p><img src="figure/index.png" style="margin-top:20px;margin-bottom:0px;" width="100%"/><br></p>
+<ul>
+<li class="fragment">Organisées pour intégrer l’une des phases de recherche: <br>Acquérir / Transformer / Analyser / Présenter / Préserver</li>
+<li class="fragment">Indexation thématique
+</p></li>
+</ul>
+</section>
+<section id="histoire" class="slide level2">
+<h2>Histoire</h2>
+<h3 id="les-débuts">Les débuts</h3>
+<p><img src="images/turkel.png" style="margin-top:20px;margin-bottom:0px;" width="200"/><br></p>
+<p>Programming Historian 1: 2007<br> William J. Turkel, Alan MacEachern</p>
+<p>
+<p>“an open-access introduction to programming in Python, aimed at working historians (and other humanists) with little previous experience”</p>
+<p><br> (Turkel, MacEachern 2007). <br>Programming Historian (EN) à partir de 2012 avec comité éditorial (revue)</p>
+</p>
+</section>
+<section id="histoire-1" class="slide level2">
+<h2>Histoire</h2>
+<h3 id="internationalisation">Internationalisation</h3>
+<img src="images/PH_timeline.PNG" style="margin-top:20px;margin-bottom:0px;" width="100%"/><br>
+<p>
+Internationalisation progressive (et rapide) <br> 59 rédacteurs/rédactrices de 2012 à juin 2022 =&gt; comité editorial composé de volontaires &amp; 39 rédacteurs/rédactrices actuellement
+</p>
+</section>
+<section id="evolution-et-perspectives" class="slide level2">
+<h2>Evolution et perspectives</h2>
+<p><img src="images/present.png" style="margin-top:20px;margin-bottom:0px;" width="150"/><br></p>
+<p class="medpcenter" style="margin-top:60px;margin-bottom:0px;">
+<ul>
+<li class="fragment">2019: ProgHist Ltd. - association à but non lucratif<br/>=&gt; Partenariats institutionnels,<br/>=&gt; soutiens individuels<br/></li>
+<li class="fragment">Depuis 2021: professionnalisation partielle avec embauche d’une assistante éditoriale (Anisa Hawes) <br> =&gt; vers un modèle mixte volontariat/externalisation de services
+</p></li>
+</ul>
+</section>
+<section id="une-démarche" class="slide level2">
+<h2>Une démarche</h2>
+<p>
+<img src="images/open.png" width="100" style="float:center;margin-top:30px;"/> <img src="images/coop.png" width="100" style="float:center;margin-top:30px;"/> <img src="images/lang.png" width="100" style="float:center;margin-top:30px;"/>
+</p>
+<ul>
+<li class="fragment">qui s’inscrit dans le libre et l’ouverture</li>
+<li class="fragment">qui s’appuie sur une communauté</li>
+<li class="fragment">qui promeut la diversité culturelle via le multilinguisme</li>
+</ul>
+</section></section>
+<section>
+<section id="lieu-dinteractions-et-de-collaborations" class="title-slide slide level1" data-background-size="1000px" data-background-color="white">
+<h1 data-background-size="1000px" data-background-color="white">Lieu d’interactions et de collaborations</h1>
+<p>=&gt; Travailler en humanités numériques : comment situer le Programming Historian? <br></p>
+<p><img src="figure/ph_q.png" width="400" style="float:center;margin-top:30px;"/></p>
+<p>
+<ol type="1">
+<li class="fragment">infrastructure</li>
+<li class="fragment">communauté de pratique</li>
+<li class="fragment">multilinguisme</li>
+<li class="fragment">évaluation ouverte par les pairs</li>
+</ol>
+</p>
+</section>
+<section id="infrastructure---évolutions" class="slide level2">
+<h2>1. Infrastructure - évolutions</h2>
+<p>
+<a href="http://niche-canada.org/wp-content/uploads/2013/09/programming-historian-1.pdf">Programming Historian 1</a> (2007-2011): un simple document PDF en ligne </br>=&gt; écriture linéaire, celle d’un livre imprimé mis en ligne
+</p>
+<p>
+<p>Programing Historian (revue):</p>
+<ul>
+<li class="fragment">2012-2015: WordPress</li>
+<li class="fragment">2015 –&gt; GitHub</li>
+</ul>
+</p>
+<p><img src="figure/github-piratager.png" width="100" style="float:center;margin-top:30px;"/></p>
+<p><br> <a href="https://github.com/programminghistorian" class="uri">https://github.com/programminghistorian</a></p>
+</section>
+<section id="infrastructure---pourquoi-github" class="slide level2">
+<h2>1. Infrastructure - Pourquoi GitHub ?</h2>
+<ul>
+<li class="fragment">Répondre aux besoins de l’équipe éditoriale: travail à distance, travail volontaire <br>==&gt; temps individuels, différents fuseaux horaires… (Gibbs 2015)</li>
+<li class="fragment">Gérer le volet international du PH et l’ajout de nouvelles équipes langagières <br>(Lincoln 2020)</li>
+<li class="fragment">Gérer le processus éditorial d’un nombre accru de leçons</li>
+<li class="fragment">Gérer le côté social/technique du PH de manière transparente, ouverte et documentée : tickets (issues) avec labels d’intérêt spécifique (selon équipe langagière et autres domaines)</li>
+</ul>
+<p><br></p>
+<p><img src="figure/github-piratager.png" width="100" style="float:center;margin-top:30px;"/></p>
+</section>
+<section id="github---outil-de-gestion-éditoriale" class="slide level2">
+<h2>1. GitHub - Outil de gestion éditoriale</h2>
+<img src="figure/github_desk.PNG" width="80%" style="float:center;margin-top:30px;"/><br>
+<p>
+<ul>
+<li class="fragment"><p>Gérer le processus éditorial d’un nombre accru de leçons (versions et statuts des leçons) :</p>
+<ul>
+<li class="fragment">dépôt ph-submissions pour la préparation des leçons: gestion des propositions acceptées, communication avec les auteur(e)s, organisation de l’évaluation ouverte par les pairs via des tickets (issues) publics (signalés dans les métadonnées yaml des leçons) à la place d’emails (sauf en cas d’évaluation fermée)</li>
+<li class="fragment">dépôt jekyll: publication et maintenance des leçons</li>
+</ul></li>
+</ul>
+</p>
+</section>
+<section id="github---outil-de-communication-entre-membres" class="slide level2">
+<h2>1. GitHub - Outil de communication entre membres</h2>
+<img src="figure/github3.PNG" width="80%" style="float:center;margin-top:30px;"/><br>
+<p>
+<ul>
+<li class="fragment">Gérer le côté social/technique du PH de manière transparente, ouverte et documentée :
+<ul>
+<li class="fragment">tickets (issues) avec labels d’intérêt spécifique (selon équipe langagière et autres domaines: finance, lesson maintenance, technical…)</li>
+<li class="fragment">wiki avec documentation</li>
+</ul></li>
+</ul>
+</p>
+</section>
+<section id="communauté-de-pratique" class="slide level2">
+<h2>2. Communauté de pratique</h2>
+<p><img src="images/transform.png" width="200" style="float:center;margin-top:30px;"/><br></p>
+<p>Lire le PH en tant que communauté de pratique selon (Wenger 1998)</p>
+<ul>
+<li class="fragment"><p>Domaine d’intérêt partagé ⇒ appropriation des méthodes numériques en SHS via l’autoformation <em>“if you don’t program, your research proces will always be at the mercy of those who do”</em> (Turkel, MacEachern 2007)</p></li>
+<li class="fragment"><p>Pratique de partage de ressources ⇒ tutoriels (connaissances, pratiques, données, expérience…)</p></li>
+<li class="fragment"><p>Engagement d’une communauté ⇒ équipe éditoriale (principes d’inclusivité, de parité) ⇒ contributeurs / contributrices: auteur(e)s, évaluateurs/évaluatrices, traducteurs/traductrices ⇒ soutiens, partenaires</p></li>
+</ul>
+</section>
+<section id="communauté-de-pratique-1" class="slide level2">
+<h2>2. Communauté de pratique</h2>
+<h3 id="programming-historian-en-français">Programming Historian en français</h3>
+<p><img src="images/ph-fr.svg" width="70" style="float:center;margin-top:30px;"/></p>
+<ul>
+<li class="fragment">Engagement d’une communauté: qui
+<ul>
+<li class="fragment">6 rédacteurs/rédactrices actuellement, 3 anciens membres</li>
+<li class="fragment">3 auteurs</li>
+<li class="fragment">15 traducteurs / traductrices dont: 3 membres PH, 5 TNAH/ENC (M2), 7 propositions spontanées</li>
+<li class="fragment">6 évaluateurs / évaluatrices, 23 évaluateurs / évaluatrices de traductions <br><br></li>
+</ul></li>
+<li class="fragment">Engagement d’une communauté: comment
+<ul>
+<li class="fragment">propositions de traductions, rapide lancement de leçons originales (2020)</li>
+<li class="fragment">pluralité de contributeurs/contributrices - mais présence sensible de certaines catégories: ingénieurs, bibs/archives: pas de “petites mains” (Waquet 2022), chez PH:-); dynamisme des archéologues</li>
+<li class="fragment">??? le(s) rôle(s) des femmes ???</li>
+<li class="fragment">la francophonie à parts pas très égales <br></li>
+</ul></li>
+<li class="fragment">2 leçons originales : <img src="figure/lecon_fr1.png" width="300" style="float:center;margin-top:30px;"/> <img src="figure/lecon_fr2.png" width="300" style="float:center;margin-top:30px;"/></li>
+</ul>
+</section>
+<section id="multilinguisme" class="slide level2">
+<h2>3. Multilinguisme</h2>
+<h3 id="consignes-aux-auteures">Consignes aux auteur(e)s</h3>
+<ul>
+<li class="fragment">Engagement pour l’open source et le libre du point de vue de l’accessibilité au plus grand nombre à un niveau international</li>
+<li class="fragment">Instructions pour <a href="https://programminghistorian.org/fr/consignes-auteurs#%C3%A9crire-pour-un-public-international">écrire pour un public international</a>
+<ul>
+<li class="fragment">éviter le cloisonnement dans un espace culturel et géographique</li>
+<li class="fragment">anticiper la traduction</li>
+<li class="fragment">assurer la pérennité des tutoriels via une <a href="https://programminghistorian.org/fr/consignes-auteurs#%C3%A9crire-de-mani%C3%A8re-durable">écriture durable</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="multilinguisme-1" class="slide level2">
+<h2>3. Multilinguisme</h2>
+<h3 id="fréquentation-géographique-et-linguistique-du-site">Fréquentation géographique et linguistique du site</h3>
+<p>
+juin 2021-juin 2022: 875 451 utilisateurs uniques (1 137 093 sessions)
+</p>
+<table>
+<thead>
+<tr class="header">
+<th>Pays</th>
+<th>Nombre d’utilisateurs uniques</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA</td>
+<td>140621</td>
+</tr>
+<tr class="even">
+<td>Inde</td>
+<td>102387</td>
+</tr>
+<tr class="odd">
+<td>Espagne</td>
+<td>63993</td>
+</tr>
+<tr class="even">
+<td>Mexique</td>
+<td>52057</td>
+</tr>
+<tr class="odd">
+<td>Colombie</td>
+<td>46692</td>
+</tr>
+<tr class="even">
+<td>France</td>
+<td>36445</td>
+</tr>
+<tr class="odd">
+<td>UK</td>
+<td>36350</td>
+</tr>
+<tr class="even">
+<td>Allemagne</td>
+<td>27057</td>
+</tr>
+<tr class="odd">
+<td>Argentine</td>
+<td>25462</td>
+</tr>
+<tr class="even">
+<td>Chili</td>
+<td>25377</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="multilinguisme-2" class="slide level2">
+<h2>3. Multilinguisme</h2>
+<h3 id="fréquentation-géographique-et-linguistique-du-site-1">Fréquentation géographique et linguistique du site</h3>
+<p>
+<p>Leçons le + consultées :</p>
+<ul>
+<li>
+EN: 40%, 470.000 vues
+</li>
+<li>
+ES: 200.000 vues
+</li>
+<li>
+FR
+</li>
+<li>
+PT
+</li>
+</ul>
+</p>
+<p>
+Leçons les + populaires: sur Python. L’audience de ces leçons dépasse les HN et atteint des communautés de développeurs (Inde, Afrique)
+</p>
+</section>
+<section id="multilinguisme-3" class="slide level2">
+<h2>3. Multilinguisme</h2>
+<h3 id="traduction">Traduction</h3>
+<p>Travail éditorial considérable autour de :</p>
+<ul>
+<li class="fragment">ressources bibliographique reliées (hyperliens, références bibliographiques, notes)</li>
+<li class="fragment">données</li>
+<li class="fragment">traduction du code (question éternelle: jusqu’où doit/peut-on aller?)</li>
+</ul>
+<p><img src="images/translate.png" width="100" style="float:center;margin-top:30px;"/> <br><br></p>
+<ul>
+<li class="fragment">Jusqu’à maintenant depuis l’anglais vers les autres langues</li>
+<li class="fragment">Depuis 2022, traductions ES=&gt;EN, FR=&gt;EN, ES=&gt;PT <br> début d’une tendance inverse?</li>
+</ul>
+</p>
+</section>
+<section id="evaluation-ouverte-par-les-pairs" class="slide level2">
+<h2>4. Evaluation ouverte par les pairs</h2>
+<p><img src="images/peer.png" width="300" style="float:center;margin-top:30px;"/></p>
+<ul>
+<li class="fragment"><p>PH est attaché aux principes de l’évaluation ouverte par les pairs, un modèle de validation du savoir scientifique qui se répand de plus en plus dans le monde académique.</p></li>
+<li class="fragment"><p>Excepté demande du ou de l’autrice de la leçon de passer par une évaluation non publique (demande très rare et que PH n’encourage pas), l’intégralité du processus de révision du texte de la future leçon est disponible en accès libre via une issue github, qui est la meilleure solution technique trouvée par PH, comme vu plus haut. (DIAPO, capture).</p></li>
+</ul>
+</section>
+<section id="evaluation---intérêt-de-la-démarche" class="slide level2">
+<h2>4. Evaluation - intérêt de la démarche</h2>
+<ul>
+<li class="fragment">garantir un processus d’évaluation correct et courtois pour toutes les parties</li>
+<li class="fragment">valoriser le travail de toutes les parties ayant pris part à la production de la leçon: auteur/ice, mais aussi éditeur/ices et évaluateur/ices.</li>
+<li class="fragment">éventuellement d’un point de vue interne, servir de base pour les futures leçons et construire une identité scientifique et éditoriale au fur-et-à-mesure de la création de nouvelles leçons.</li>
+</ul>
+<p><img src="figure/heurist_png.png" width="80%" style="float:center;margin-top:30px;"/></p>
+</section>
+<section id="processus" class="slide level2">
+<h2>4. Processus:</h2>
+<ol type="1">
+<li class="fragment">soumission à comité qui accepte ou pas (ensemble des éditeur/ices)</li>
+<li class="fragment">acceptation avec conseils de modification</li>
+<li class="fragment">allers-retours entre évaluateurs/ices et auteur/ice</li>
+<li class="fragment">l’éditeur contrôle et synthétise les évaluations pour fournir des instructions de correction claires à l’auteur(e)</li>
+<li class="fragment">publication finale</li>
+</ol>
+</section>
+<section id="processus---issues-github-1" class="slide level2">
+<h2>4. Processus - issues GitHub (1)</h2>
+<p><img src="figure/heurist_review.PNG" width="100%" style="float:center;margin-top:30px;"/></p>
+</section>
+<section id="processus---issues-github-2" class="slide level2">
+<h2>4. Processus - issues GitHub (2)</h2>
+<p><img src="figure/heurist_review2.PNG" width="80%" style="float:center;margin-top:30px;"/></p>
+</section></section>
+<section>
+<section id="retour-dexperience" class="title-slide slide level1" data-background-size="1000px" data-background-color="white">
+<h1 data-background-size="1000px" data-background-color="white">Retour d’experience</h1>
+<p><img src="figure/datalogism.PNG" width="80%" style="float:center;margin-top:30px;"/><br></p>
+</section>
+<section id="célian-ringwald---janvier-2021" class="slide level2">
+<h2>Célian Ringwald - janvier 2021</h2>
+<ul>
+<li class="fragment"><p>1 évaluation (Beautiful soup)</p></li>
+<li class="fragment"><p>2 suivis éditoriaux en charge (Passim / tf-idf)</p></li>
+<li class="fragment"><p>3 traductions en attente d’évaluation (tutoriel bases)</p></li>
+<li class="fragment"><p>1 traduction en cours (Open Linked Data) <br><br></p></li>
+<li class="fragment"><p>Remarques :</p>
+<ul>
+<li class="fragment">De la difficulté à traduire les termes techniques</li>
+<li class="fragment">Concilier les acceptations linguistiques <br><br></li>
+</ul></li>
+<li class="fragment"><p>Demande de se libérer du temps (activité bénévole) <br><br></p></li>
+<li class="fragment"><p>Pour aller plus loin : analyse des contributions <br><br></p></li>
+</ul>
+</section></section>
+<section id="rejoignez-nous" class="title-slide slide level1">
+<h1>Rejoignez-nous !</h1>
+<p>
+Si vous souhaitez rejoindre la communauté vous êtes les bienvenus ! <br><a href="https://programminghistorian.com" class="uri">https://programminghistorian.com</a> <span class="citation" data-cites="ProgHist">@ProgHist</span>
+</p>
+<ul>
+<li class="fragment">Ecrire/traduire/évaluer une leçon</li>
+<li class="fragment">Rejoindre l’équipe éditoriale</li>
+<li class="fragment">Nous soutenir financièrement</li>
+</ul>
+</section>
+
+<section>
+<section id="références" class="title-slide slide level1">
+<h1>Références</h1>
+
+</section>
+<section id="références-1" class="slide level2">
+<h2>Références (1)</h2>
+<ul>
+<li class="fragment"><p>Cameron Blevins (2015), “Review of the Programming Historian”, The Journal of Interactive Technology &amp; Pedagogy 8 <a href="https://jitp.commons.gc.cuny.edu/review-of-the-programming-historian/" class="uri">https://jitp.commons.gc.cuny.edu/review-of-the-programming-historian/</a></p></li>
+<li class="fragment"><p>Adam Crymble (2018), “Uses of the Programming Historian”, The Programming Historian Blog, <a href="https://programminghistorian.org/posts/Uses-Of-The-Programming-Historian" class="uri">https://programminghistorian.org/posts/Uses-Of-The-Programming-Historian</a></p></li>
+<li class="fragment"><p>Adam Crymble <em>et al.</em> (2021), 2021 Programming Historian Deposit release (2021-11). Zenodo. <a href="https://doi.org/10.5281/zenodo.5645020" class="uri">https://doi.org/10.5281/zenodo.5645020</a></p></li>
+<li class="fragment"><p>Adam Crymble (2021), <em>Technology and the Historian</em>, Urbana: University of Illinois Press</p></li>
+<li class="fragment"><p>Adam Crymble and Maria José Afanador-Llach (2018), “Writing Workshop Report Bogotá, Colombia”, <em>The Programming Historian Blog</em>, <a href="https://programminghistorian.org/posts/bogota-workshop-report" class="uri">https://programminghistorian.org/posts/bogota-workshop-report</a></p></li>
+<li class="fragment"><p>Adam Crymble, Alan MacEachern and William J. Turkel (2012), “The Programming Historian 2: A Participatory Textbook”, Digital Humanities 2012, Berlin, <a href="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/the-programming-historian-2-a-participatory-textbook.1.html" class="uri">http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/the-programming-historian-2-a-participatory-textbook.1.html</a></p></li>
+<li class="fragment"><p>Fred Gibbs (2015), “Editorial Sustainability and Open Peer Review at Programming Historian”, <em>DH Commons</em>, Vol. 1</p></li>
+<li class="fragment"><p>Fred Gibbs (2017), “Sustainable Publishing: Reflections of a Former Programming Historian Editor”, <em>FredGibbs.net</em>, <a href="http://fredgibbs.net/posts/reflections-former-PH-editor" class="uri">http://fredgibbs.net/posts/reflections-former-PH-editor</a></p></li>
+<li class="fragment"><p>Jennifer Isasi (2019), “Newsletter de fin d’année 2019”, <em>The Programming Historian Blog</em>, <a href="https://programminghistorian.org/posts/bulletin-de-information" class="uri">https://programminghistorian.org/posts/bulletin-de-information</a></p></li>
+</ul>
+</section>
+<section id="références-2" class="slide level2">
+<h2>Références (2)</h2>
+<ul>
+<li class="fragment"><p>Jennifer Isasi and Antonio Rojas Castro (2019), “Programming Historian en español: De la traducción a la creación de recursos educativos abiertos”, <em>Humanidades Digitales Hispánicas 2019</em>, Tolède, Espagne</p></li>
+<li class="fragment"><p>Christian Jacob (2014), <em>Qu’est-ce qu’un lieu de savoir ?</em> Marseille : OpenEdition Press DOI : <a href="https://doi.org/10.4000/books.oep.423" class="uri">https://doi.org/10.4000/books.oep.423</a>.</p></li>
+<li class="fragment"><p>Max Kemman (2021), <em>Trading Zones of Digital History</em>, De Gruyter, <a href="https://www.degruyter.com/document/doi/10.1515/9783110682106/html" class="uri">https://www.degruyter.com/document/doi/10.1515/9783110682106/html</a></p></li>
+<li class="fragment"><p>Matthew Lincoln (2020), “Multilingual Jekyll: How The Programming Historian Does That”, <em>matthewlincoln.net</em>, 1 March 2020, <a href="https://matthewlincoln.net/2020/03/01/multilingual-jekyll.html" class="uri">https://matthewlincoln.net/2020/03/01/multilingual-jekyll.html</a>.</p></li>
+<li class="fragment"><p>Sofia Papastamkou 2021), “Working Within Our Capacities”. In “The Programming Historian: A Global Case Study in Multilingual OA and DH Tutelage/Instruction”. MSU Global DH Symposium, 2021</p></li>
+<li class="fragment"><p>Sofia Papastamkou, Jessica Parr and Riva Quiroga (2021). “Challenges for Digital Literacy in the Humanities. The Open, Community-Based and Multilinguistic Approach of The Programming Historian”. NewsEye’s International Conference, Europe, 17 March, 2021</p></li>
+<li class="fragment"><p>Heather Piwowar et al. (2018), “The state of OA: a large-scale analysis of the prevalence and impact of Open Access articles.” PeerJ 6 e4375, <a href="doi:10.7717/peerj.4375" class="uri">doi:10.7717/peerj.4375</a></p></li>
+</ul>
+</section>
+<section id="références-3" class="slide level2">
+<h2>Références (3)</h2>
+<ul>
+<li class="fragment"><p>Antonio Rojas Castro, Sofia Papastamkou, and Anna-Maria Sichani (2019), “Three Challenges in Developing Open Multilingual DH Educational Resources: The Case of The Programming Historian”, “Accelerating DH Education” Workshop, Digital Humanities 2019, Utrecht, Pays-Bas. <a href="http://doi.org/10.5281/zenodo.3384956" class="uri">http://doi.org/10.5281/zenodo.3384956</a></p></li>
+<li class="fragment"><p>Antonio Rojas Castro, Sofia Papastamkou, and Anna-Maria Sichani (2019), “Designing Multilingual Digital Pedagogy Initiatives: The Programming Historian for English, Spanish, and French speaking DH Communities”, Digital Humanities 2019, Utrecht, Pays-Bas, <a href="http://doi.org/10.5281/zenodo.3333498" class="uri">http://doi.org/10.5281/zenodo.3333498</a></p></li>
+<li class="fragment"><p>Anna-Maria Sichani, James Baker, Maria José Afanador Llach, and Brandon Walsh (2019), “Diversity and Inclusion in Digital Scholarship and Pedagogy: The Case of The Programming Historian”, Insights 32 (1): 16 DOI: <a href="http://doi.org/10.1629/uksg.465" class="uri">http://doi.org/10.1629/uksg.465</a> (2019)</p></li>
+<li class="fragment"><p>William J. Turkel and Alan MacEachern, The Programming Historian, 1st ed. NiCHE: Network in Canadian History &amp; Environment (2007-11) <a href="https://niche-canada.org/research/niche-digital-infrastructure-project/the-programming-historian/" class="uri">https://niche-canada.org/research/niche-digital-infrastructure-project/the-programming-historian/</a></p></li>
+<li class="fragment"><p>Etienne Wenger (1998), Communities of Practice. Learning, Meaning, and Identity, Cambridge: Cambridge University Press</p></li>
+<li class="fragment"><p>The Programming Historian Community Survey, (non publié) (2018)s</p></li>
+</ul>
+</section></section>
+<section id="section" class="title-slide slide level1" data-background-size="1000px">
+<h1 data-background-size="1000px"></h1>
+<p>Thank you! ¡Gracias! Merci! <a href="mailto:Obrigad@s" class="email">Obrigad@s</a>!</p>
+</section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: true,
+        // Hides the address bar on mobile devices
+        hideAddressBar: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        menu: {
+   
+    
+    
+    
+    
+    
+    
+ 
+          custom: false,
+          themes: false,
+          transitions: false
+        },
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
