@@ -866,7 +866,7 @@
                 {type: '<br>'}, {type: '<br>'},
                  {type: '<br>'},{type: '<br>'},
                 {delay: 800},
-                {type: 'My name is Célian Ringwald, and I freshly defended my Phd the 19th December 2025 👨‍🎓<br/>'},   
+                {type: 'My name is Célian Ringwald, and I freshly defended my Phd the 19th December 2025 👨‍🎓 !<br/>'},   
                 {delay: 500}, 
                 {type: '<br>'},{type: '<br>'},
 				{delay: 200},
@@ -881,7 +881,7 @@
 				{delay: 200},
                {type: ' and the collaboration of Franck Michel and Hanna Abi Akl<br>'},
                  {type: '<br>'}, {type: '<br>'},
-				{type: 'During this journey I developed 🦫Kastor and 🪨SciLEX.<br>'},
+				{type: 'During this journey I developed 🦫 Kastor and 🪨 SciLEX.<br>'},
                 {delay: 800},
                 {type: 'And a summary of my work is available in this 🗞️ Medium article<br>'},
                 {delay: 500},
@@ -904,6 +904,32 @@
             ]
         });
     });
+		$('#typewriteText').on('typewrite:end', function () {
+    $(this).html(
+        $(this).html().replace(
+            '📺 Replay this full of emotions moment here',
+            '📺 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM" target="_blank">Replay this full of emotions moment here</a>',
+        );
+		   $(this).html().replace(
+            ' 📃 Access to the slides here',
+            '📃 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Access to the slides here</a>.<br/>',
+        );
+		   $(this).html().replace(
+            'Wimmics team',
+            '<a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>',
+        );
+		   $(this).html().replace(
+            '🪨 SciLEX',
+            '<a href="https://github.com/Wimmics/SciLEx" target="_blank">🪨 SciLEX</a>',
+        );
+			
+		   $(this).html().replace(
+            '🦫 Kastor',
+            '<a href="https://github.com/Wimmics/Kastor" target="_blank"> 🦫 Kastor</a>',
+        );
+		
+    );
+});
 //<a href="https://medium.com/@3iacotedazur/semantic-relation-extraction-with-frugal-language-models-3314db2559a6" target="_blank">
 		// 		{type: '📺 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Replay this full of emotions moment here</a>'},
 		// 		{delay: 200},
@@ -912,7 +938,7 @@
 		// 		{type: 'It was a important milestone after my 4 last years within the <a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>.<br>'},
 		// 		{delay: 200},
 		// <a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>
-		// <a href="https://github.com/Wimmics/SciLEx" target="_blank">
+		// 
 function wordCloud(selector) {
 
     var fill = d3.scale.category20();
