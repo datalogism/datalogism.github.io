@@ -863,25 +863,27 @@
 			html: true,
             actions: [
                 {type: 'Hello, welcome on my here,'},
-                {type: '<br>'},   
-                {type: 'My name is Célian Ringwald,'},   
+                {type: '<br>'}, {type: '<br>'},
+                 {type: '<br>'},{type: '<br>'},
+                {delay: 800},
+                {type: 'My name is Célian Ringwald, and I freshly defended my Phd the 19th December 2025 👨‍🎓<br/>'},   
                 {delay: 500}, 
-                {type: '👨‍🎓 I defended my Phd the 19th December 2025 <br/>'},
+                {type: '<br>'},{type: '<br>'},
 				{delay: 200},
-				{type: '📺 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Replay this full of emotions moment here</a> ],<br/>'},
+				{type: '📺 Replay this full of emotions moment here & 📃 Access to the slides here'},
+                {type: '<br>'},{type: '<br>'},
 				{delay: 200},
-				{type: '📃 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Access to the slides</a>,<br/>'},
-				{delay: 200},
-				{type: 'It was a important milestone after my 4 last years within the <a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>.<br>'},
-				{delay: 200},
-				{type: 'I answered to the following question: How to learn RDF pattern extractors from natural language and knowledge graphs ? [📃]'},
+				{type: 'It was a important milestone after my 4 last years within the Wimmics team during which I answered to the following question:'},   
+				{type: '<br>'},{type: '<br>'},
+				{type: 'How to learn RDF pattern extractors from natural language and knowledge graphs ?'},
                 {type: '<br>'},
                 {type: 'under the supervision of Fabien Gandon, Catherine Faron-Zucker<br>'},
 				{delay: 200},
                {type: ' and the collaboration of Franck Michel and Hanna Abi Akl<br>'},
-				{type: 'During this journey I developed 🦫<a href="https://github.com/Wimmics/Kastor" target="_blank">Kastor</a> and 🪨<a href="https://github.com/Wimmics/SciLEx" target="_blank">SciLEX</a>.<br>'},
+                 {type: '<br>'}, {type: '<br>'},
+				{type: 'During this journey I developed 🦫Kastor and 🪨SciLEX.<br>'},
                 {delay: 800},
-                {type: 'A summary of this research is available in this <a href="https://medium.com/@3iacotedazur/semantic-relation-extraction-with-frugal-language-models-3314db2559a6" target="_blank"> 🗞️ Medium article</a><br>'},
+                {type: 'And a summary of my work is available in this 🗞️ Medium article<br>'},
                 {delay: 500},
                 {type: '<br>'},
                  {type: '<br>'}, {type: '<br>'},
@@ -889,7 +891,7 @@
                 {type: '<br>'},
                 {delay: 800},
                 {type: '<br>'},
-                {type: 'You will find here more about me, my work, my other hypertextual projects...'}
+                {type: 'But you will find below more about me, my work, my other hypertextual projects...'}
                 // {delay: 1500},
                 // // {remove: {num: 1, type: 'stepped'}},
                 // {select: {from: 11, to: 16}},
@@ -902,7 +904,15 @@
             ]
         });
     });
-
+//<a href="https://medium.com/@3iacotedazur/semantic-relation-extraction-with-frugal-language-models-3314db2559a6" target="_blank">
+		// 		{type: '📺 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Replay this full of emotions moment here</a>'},
+		// 		{delay: 200},
+		// 		{type: '📃 <a href="https://www.youtube.com/watch?v=E4o1Xy8WDSM"  target="_blank">Access to the slides</a>,<br/>'},
+		// 		{delay: 200},
+		// 		{type: 'It was a important milestone after my 4 last years within the <a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>.<br>'},
+		// 		{delay: 200},
+		// <a href="https://team.inria.fr/wimmics/" target="_blank">Wimmics team</a>
+		// <a href="https://github.com/Wimmics/SciLEx" target="_blank">
 function wordCloud(selector) {
 
     var fill = d3.scale.category20();
